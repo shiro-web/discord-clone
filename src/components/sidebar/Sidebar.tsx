@@ -16,7 +16,7 @@ function Sidebar() {
         </div>
         <div className="sidebarRight">
             <div className="sidebarTop">
-                <h3>Discord</h3>
+                <h3>ディスコード</h3>
                 <ExpandMoreIcon/>
             </div>
         </div>
