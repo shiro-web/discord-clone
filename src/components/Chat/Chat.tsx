@@ -15,8 +15,6 @@ function Chat() {
             <ChatMessage/>
             <ChatMessage/>
             <ChatMessage/>
-            <ChatMessage/>
-
         </div>
         <div className="chatInput">
             <AddCircleOutlineIcon/>
