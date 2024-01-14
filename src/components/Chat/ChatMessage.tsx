@@ -1,17 +1,31 @@
 import React from 'react';
 import "./ChatMessage.scss";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Timestamp } from 'firebase/firestore';
 
-function ChatMessage() {
+type Props = {
+    timestamp:Timestamp;
+    message:string;
+    user:{
+        uid:string,
+        photo:string,
+        email:string,
+        displayName:string;
+    };
+}
+
+function ChatMessage(props:Props) {
+    const {message,timestamp,user} = props;
+    console.log(message)
   return (
     <div className='message'>
-        <AccountCircleIcon/>
+        <img src={user?.photo}/>
         <div className="messageInfo">
             <h4>
-                川島ちゃんねる
-                <span className='messageTimestamp'>2024/1/13</span>
+                {user?.displayName}
+                <span className='messageTimestamp'>{new Date(timestamp?.toDate()).toLocaleString()}</span>
             </h4>
-            <p>メッセージ本文</p>
+            <p>{message}</p>
         </div>
     </div>
   )
